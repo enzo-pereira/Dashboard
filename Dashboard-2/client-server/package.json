@@ -1,0 +1,29 @@
+{
+  "name": "client-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "start:migrate:dev": "npx prisma migrate dev && npx prisma generate && npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.11.0",
+    "axios": "^1.3.4",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "googleapis": "^113.0.0",
+    "javascript": "^1.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "node": "^19.6.1",
+    "nodemon": "^2.0.21"
+  },
+  "devDependencies": {
+    "prisma": "^4.11.0"
+  }
+}

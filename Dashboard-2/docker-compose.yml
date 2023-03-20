@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  api:
+    container_name: api
+    build: client-server
+    ports:
+      - ${API_PORT}:8080
+    depends_on:
+      - postgres
+    volumes:
+      - ./client-server/src:/app/src
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "dashboard"
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data/
+
+  prisma-studio:
+    container_name: prisma-studio
+    restart: on-failure
+    image: timothyjmiller/prisma-studio:latest
+    env_file:
+      - .env
+    ports:
+      - ${PRISMA_STUDIO_PORT}:5555
+
+  front-end:
+    container_name: front-end
+    build: client
+    ports:
+      - ${WEB_PORT}:8081
+    depends_on:
+      - api
+
+volumes:
+    postgres_volume:

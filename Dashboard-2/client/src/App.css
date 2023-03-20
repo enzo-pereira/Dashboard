@@ -1,0 +1,356 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-image: url("back2.png");
+    background-size: cover;
+}
+
+.app {
+    color: rgb(0, 0, 0);
+    padding: 40px;
+    background-color: transparent;
+    background-size: 10%;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.app button {
+  appearance: none;
+  background-color: transparent;
+  border: 3px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 17px;
+  font-weight: 800;
+  line-height: normal;
+  margin: 0;
+  min-height: 85px;
+  min-width: 0;
+  outline: none;
+  padding: 27px 5px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 275px;
+  will-change: transform;
+}
+
+.app button:disabled {
+  pointer-events: none;
+}
+
+.app button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.app button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.sidebar button {
+  align-items: center;
+  background-color: #2772d4;
+  border: 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 550;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+.sidebar button:hover,
+.sidebar button:focus { 
+  background-color: #e0dbdb;
+  color: #2772d4;
+}
+
+.sidebar button:active {
+  background: #bdbfc1;
+  color: rgb(255, 255, 255, .7);
+}
+
+.sidebar button:disabled { 
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+}
+
+.app img {
+    max-width : 100%;
+    height : 20px;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #f2f2f2;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+
+    .sidebar-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .sidebar-logo {
+      width: 80%;
+      max-width: 150px;
+      height: auto;
+    }
+    
+    .sidebar-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .sidebar-list-item {
+      margin-bottom: 10px;
+      padding: 5px;
+      background-color: #fff;
+      border-radius: 5px;
+      font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+    
+    .sidebar-list-item:hover {
+      background-color: #A1CBDD;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      background-color: #f2f2f2;
+      padding: 20px;
+      box-sizing: border-box;
+      flex-direction: row-reverse;
+    }
+
+    .topbar-logo {
+      width: 20%;
+      max-width: 50px;
+      margin-left: 20px;
+      height: auto;
+    }
+    
+    .topbar-menu {
+      display: flex;
+      list-style-type: none;
+      margin-left: 200px;
+      padding: 0;
+    }
+    
+    .topbar-menu-item {
+      margin-left: 20px;
+      padding: 10px;
+      font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+      background-color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+    
+    .topbar-menu-item:first-child {
+      margin-left: 0;
+    }
+    
+    .topbar-menu-item:hover {
+      background-color: #A1CBDD;
+    }
+
+    .widget {
+      background-color: #ebeaea;
+      border: 1px solid #1A1A1A;
+      border-radius: 15px;
+      font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+      border-color: #2772d4;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      padding-top: 2%;
+      padding-bottom: 20;
+      margin: auto;
+      max-width: 310px;
+      max-height: 150px;
+      position: center;
+      top: 10%;
+      left: 50%;
+    }
+    
+    .widget h1 {
+      padding-top: 0px;
+      margin-top: 5px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #2772d4;
+    }
+
+    .widget h3 {
+      background-color: #ffffff;
+      padding-top: 0px;
+      margin-top: 5px;
+      border: 1px double #2772d4;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #083b7e;
+    }
+
+    .widget-icon{  background-image: url('./assets/supp.png');
+      background-size: cover;
+      border-color: #ebeaea;
+      margin-left: 50px;
+      border-color: none;
+      width: 20px;
+      height: 20px;
+      margin-right: 0.5rem;
+    }
+  
+    .container {
+      max-width: 800px;
+      margin-top: 10px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      height: 50vh;
+    }
+
+    .service {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+    }
+
+    #gmail-button {
+      display: inline-flex;
+      position: center;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      background-color: #ffffff;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+    
+    #gmail-button:hover {
+      color: #2a38fa;
+      background-color: #f7f7f7;
+    }
+
+    .gmail-text {
+      font-size: 11px;
+      font-weight: bold;
+    }
+    
+    .gmail-icon {
+      background-image: url('https://developers.google.com/identity/images/g-logo.png');
+      background-size: cover;
+      width: 24px;
+      height: 24px;
+      margin-right: 0.5rem;
+    }
+
+    #meteo-button {
+      display: inline-flex;
+      position: center;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      background-color: #fff;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+    
+    #meteo-button:hover {
+      color: #2a38fa;
+      background-color: #f7f7f7;
+    }
+    
+    .meteo-icon {
+      background-image: url('./assets/weather-logo.png');
+      background-size: cover;
+      width: 24px;
+      height: 24px;
+      margin-right: 0.5rem;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      border: none;
+      border-radius: 10px;
+      background-color: #f1f1f1;
+      padding: 0 20px;
+      font-size: 14px;
+      color: #333;
+    }
+    
+    .search-bar input {
+      flex: 1;
+      height: 100%;
+      border: blue;
+      background-color: transparent;
+      font-size: 14px;
+      color: #333;
+    }
+    
+    .search-bar button {
+      border: none;
+      background-color: transparent;
+      margin-left: 10px;
+      font-size: 14px;
+      color: #2772d4;
+      cursor: pointer;
+    }
