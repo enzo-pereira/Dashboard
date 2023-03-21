@@ -6,9 +6,6 @@ const { PrismaClient } = require("@prisma/client");
 const jwt = require("jsonwebtoken");
 // const userInfo = require("os");
 // const axios = require("axios");
-const { isConnect } = require("../middleware/middleware");
-const {detectNewMail} = require("../widgets/google/gmail")
-
 
 const prisma = new PrismaClient();
 
@@ -24,11 +21,11 @@ const googleOauth = express();
 
 googleOauth.get("/google-url", async (_req, res) => {
   const url = oauth2Client.generateAuthUrl({
-    access_type: "offline",
     prompt: "consent",
     scope: [
       "https://www.googleapis.com/auth/userinfo.profile",
       "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/gmail.readonly",
     ],
     include_granted_scopes: true,
   });
@@ -87,4 +84,4 @@ googleOauth.get("/auth/google/callback", async function (req, res) {
 });
 
 
-module.exports = { googleOauth };
+module.exports = { googleOauth, oauth2Client };

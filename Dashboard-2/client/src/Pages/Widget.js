@@ -8,6 +8,7 @@ function Widget(props) {
   const [showWeather, setShowWeather] = useState(false);
   const [cityName, setCityName] = useState("");
   const [cityproba, setCityproba] = useState("");
+  const [nbrMail, setnbrMail] = useState("");
 
   const handleGoogleClick = async() => {
     await getEmail();
@@ -41,7 +42,6 @@ function Widget(props) {
     };
     console.log(searchText);
     const token = localStorage.getItem("token");
-    console.log("ccccccccccccccccccccccccc");
     const response = await axios.post(`http://localhost:8080/forecast`, data, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -67,6 +67,7 @@ function Widget(props) {
       }
     );
     console.log(response.data);
+    setnbrMail(response.data);
   };
 
   return (
@@ -97,7 +98,7 @@ function Widget(props) {
               </h1>
             }
             <br />
-            <h3>Nombres de nouveaux mails : </h3>
+            <h3>Nombres de nouveaux mails : {nbrMail}</h3>
           </div>
         )}
         {showWeather && (
