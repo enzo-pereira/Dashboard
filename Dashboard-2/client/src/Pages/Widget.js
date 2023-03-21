@@ -8,7 +8,7 @@ function Widget(props) {
   const [showWeather, setShowWeather] = useState(false);
   const [cityName, setCityName] = useState("");
   const [cityproba, setCityproba] = useState("");
-  const [nbrMail, setnbrMail] = useState("");
+  const [dateMail, setdateMail] = useState("");
 
   const handleGoogleClick = async() => {
     await getEmail();
@@ -67,7 +67,7 @@ function Widget(props) {
       }
     );
     console.log(response.data);
-    setnbrMail(response.data);
+    setdateMail(response.data);
   };
 
   return (
@@ -98,7 +98,7 @@ function Widget(props) {
               </h1>
             }
             <br />
-            <h3>Nombres de nouveaux mails : {nbrMail}</h3>
+            <h3>Heure du dernier mail reçu: {dateMail}</h3>
           </div>
         )}
         {showWeather && (
@@ -132,7 +132,7 @@ function Widget(props) {
             <br />
             <button id="gmail-button" onClick={handleGoogleClick}>
               <span class="gmail-icon"></span>
-              <span class="gmail-text">Voir le nombre de mail non-lus</span>
+              <span class="gmail-text">Voir l'heure du dernier mail reçu</span>
             </button>
             <br />
             <br />

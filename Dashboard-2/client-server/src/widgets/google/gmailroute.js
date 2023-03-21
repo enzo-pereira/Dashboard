@@ -5,9 +5,9 @@ const { google } = require('googleapis');
 const gmail = express();
 
 gmail.get("/api/google/gmail", async (req, res) => {
-  const gmailClientMessages = await detectNewMail();
-  console.log(gmailClientMessages);
-  res.send(gmailClientMessages)
+  const lastEmailDate = await detectNewMail();
+  console.log("Last email received on:", lastEmailDate);
+  res.send(lastEmailDate);
 });
 
 module.exports = { gmail }
