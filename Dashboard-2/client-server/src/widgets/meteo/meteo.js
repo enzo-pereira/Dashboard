@@ -26,6 +26,7 @@ routerForecast.post("/forecast", isConnect, async (req, res) => {
   const data = {
     name: forecast.data.city.name,
     probapluie: forecast.data.forecast.probarain,
+    tempmax: forecast.data.forecast.tmax,
   };
   res.status(200).send(data);
 });

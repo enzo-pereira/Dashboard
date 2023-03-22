@@ -221,6 +221,7 @@ body{
     .widget h1 {
       padding-top: 0px;
       margin-top: 5px;
+      padding-bottom: 0px;
       font-size: 1.2rem;
       font-weight: bold;
       color: #2772d4;
@@ -272,7 +273,7 @@ body{
       position: center;
       align-items: center;
       justify-content: center;
-      padding: 0.5rem 1rem;
+      padding: 0.1rem 0.5rem;
       border: none;
       border-radius: 4px;
       background-color: #ffffff;
@@ -286,7 +287,7 @@ body{
     }
 
     .gmail-text {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: bold;
     }
     
@@ -303,7 +304,7 @@ body{
       position: center;
       align-items: center;
       justify-content: center;
-      padding: 0.5rem 1rem;
+      padding: 0.1rem 0.5rem;;
       border: none;
       border-radius: 4px;
       background-color: #fff;
@@ -328,7 +329,7 @@ body{
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 30px;
+      height: 20px;
       border: none;
       border-radius: 10px;
       background-color: #f1f1f1;
