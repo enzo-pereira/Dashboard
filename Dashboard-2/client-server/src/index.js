@@ -6,6 +6,7 @@ const {auth} = require("./routes/auth/auth");
 const {user} = require("./routes/user/user");
 const {routerForecast} = require("./widgets/meteo/meteo");
 const {gmail} = require("./widgets/google/gmailroute");
+const { reddit } = require("./widgets/reddit/reddit");
 
 require('dotenv').config();
 const app = express();
@@ -21,6 +22,7 @@ app.use(googleOauth);
 app.use(user);
 app.use(routerForecast);
 app.use(gmail);
+app.use(reddit);
 
 app.get("/", (req, res) => {
   console.log(req.body)

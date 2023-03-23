@@ -30,5 +30,34 @@ async function detectNewMail() {
       });
     });
   }
+
+  async function detectUserMail(num) {
+    const gmail = google.gmail({ version: 'v1', auth: oauth2Client });
  
-  module.exports = { detectNewMail };
+    return new Promise((resolve, reject) => {
+      gmail.users.messages.list({ userId: 'me' }, (error, response) => {
+        if (error) {
+          console.log(error);
+          reject(error);
+          return;
+        }
+        console.log(num);
+        const messageID = response.data.messages[Number(num)].id;
+        
+        gmail.users.messages.get(
+          { userId: 'me', id: messageID },
+          (err, res) => {
+            if (err) {
+              console.log(err);
+              reject(err);
+              return;
+            }
+            console.log(res.data.payload.headers[17].value)
+            resolve(res.data.payload.headers[17].value);
+          }
+        );
+      });
+    });
+  }
+ 
+  module.exports = { detectNewMail, detectUserMail};
